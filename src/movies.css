@@ -1,0 +1,32 @@
+#movie-list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie {
+    list-style: none;
+    width: 150px;
+    height: 225px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 5px 10px;
+    background: #eee;
+}
+
+.movie h2 {
+    font-size: .9em;
+    height: 75px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie .year {
+    padding-top: 5px;
+    font-size: .75em;
+}
