@@ -14,7 +14,7 @@ export function makeMovieCard(movie) {
 
 const movieList = document.getElementById('movie-list');
 
-export function loadMovies(movies) {
+export default function loadMovies(movies) {
     movies.forEach(movie => {
         const dom = makeMovieCard(movie);
         movieList.appendChild(dom);
