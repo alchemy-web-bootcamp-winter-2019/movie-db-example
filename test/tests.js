@@ -1,2 +1,2 @@
 import './html-equal.js';
-import './example.test.js';
+import './movies-component.test.js';
