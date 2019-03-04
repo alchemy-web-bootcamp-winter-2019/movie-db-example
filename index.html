@@ -20,7 +20,7 @@
         <button>Search</button>
     </form>
 
-    <section id="paging">
+    <section id="paging" class="hidden">
         <button id="previous-button">&lt; Previous</button>
         
         <div>
@@ -33,7 +33,11 @@
         <button id="next-button">Next &gt;</button>
     </section>
 
-    <ul id="movie-list"></ul>
+    <ul id="movie-list">
+        <p class="search-prompt">
+            Search for a movie above to get started!
+        </p>
+    </ul>
 
     <script type="module" src="src/index.js"></script>
 </body>
