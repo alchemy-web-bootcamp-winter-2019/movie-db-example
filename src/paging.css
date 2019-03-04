@@ -1,0 +1,13 @@
+#paging {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#paging button {
+    height: 30px;
+    background: lightsteelblue;
+    border: 1px solid black;
+}

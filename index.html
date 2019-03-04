@@ -6,6 +6,8 @@
     <title>Topic</title>
     <link rel="stylesheet" href="src/main.css">
     <link rel="stylesheet" href="src/movies.css">
+    <link rel="stylesheet" href="src/search.css">
+    <link rel="stylesheet" href="src/paging.css">
 </head>
 <body>
     <header>
@@ -13,7 +15,23 @@
         <h1>Movie Search</h1>
     </header>
 
-    <p id="error-message"></p>
+    <form id="search-form">
+        <input name="search-term">
+        <button>Search</button>
+    </form>
+
+    <section id="paging">
+        <button id="previous-button">&lt; Previous</button>
+        
+        <div>
+            Page 
+            <span id="current-page">1</span>
+            of
+            <span id="total-pages"></span>
+        </div>
+
+        <button id="next-button">Next &gt;</button>
+    </section>
 
     <ul id="movie-list"></ul>
 
