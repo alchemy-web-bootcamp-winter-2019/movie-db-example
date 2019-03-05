@@ -4,46 +4,39 @@ import loadMovies from './movies-component.js';
 import makeSearchAPIUrl from './make-search-api-url.js';
 import { writeOptionsAsQuery, readQueryAsOptions } from './query-options.js';
 
-let searchOptions = null;
-let pagingOptions = null;
+let queryOptions = null;
+
+loadSearch(searchOptions => {
+    queryOptions.search = searchOptions;
+    queryOptions.paging = { page: 1 };
+    writeQueryOptionsToHash();
+});
+
+loadPaging(pagingOptions => {
+    queryOptions.paging = pagingOptions;
+    writeQueryOptionsToHash();
+});
 
 function writeQueryOptionsToHash() {
-    const queryOptions = {
-        search: searchOptions,
-        paging: pagingOptions
-    };
     const query = writeOptionsAsQuery(queryOptions);
     window.location.hash = query;
 }
 
-loadSearch(newSearchOptions => {
-    searchOptions = newSearchOptions;
-    pagingOptions = { page: 1 };
-    writeQueryOptionsToHash();
-});
-
-loadPaging(newPagingOptions => {
-    pagingOptions = newPagingOptions;
-    writeQueryOptionsToHash();
-});
+// run on load
+runSearchFromQuery();
 
 window.addEventListener('hashchange', () => {
     runSearchFromQuery();
 });
 
-// run on load
-runSearchFromQuery();
-
 function runSearchFromQuery() {
     const query = window.location.hash.slice(1);
-    const queryOptions = readQueryAsOptions(query);
-    searchOptions = queryOptions.search;
-    pagingOptions = queryOptions.paging;
+    queryOptions = readQueryAsOptions(query);
+
+    updateSearchTerm(queryOptions.search);
 
     const url = makeSearchAPIUrl(queryOptions);
     
-    updateSearchTerm(searchOptions);
-
     if(!url) {
         return;
         // TODO: clear movies component
