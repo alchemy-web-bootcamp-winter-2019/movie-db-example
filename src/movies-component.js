@@ -1,8 +1,13 @@
+const PLACE_HOLDER = './assets/movie-placeholder.png';
 export function makeMovieCard(movie) {
+    const poster = movie.poster_path 
+        ? `https://image.tmdb.org/t/p/w92${movie.poster_path}`
+        : PLACE_HOLDER;
+
     const html = /*html*/`        
         <li class="movie" title="${movie.overview}">
             <h2>${movie.title}</h2>
-            <img src="https://image.tmdb.org/t/p/w92${movie.poster_path}">
+            <img src="${poster}">
             <span class="year">${movie.release_date.split('-')[0]}</span>
         </li>
     `;

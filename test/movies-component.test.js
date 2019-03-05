@@ -27,6 +27,25 @@ test('make movie card', assert => {
             <img src="https://image.tmdb.org/t/p/w92/btTdmkgIvOi0FFip1sPuZI2oQG6.jpg">
             <span class="year">1977</span>
         </li>
+    `);
+});
 
+test('make movie card no poster', assert => {
+    const movie = {
+        'id': 11,
+        'title': 'Star Wars',
+        'poster_path': null,
+        'overview': 'Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.',
+        'release_date': '1977-05-25'
+    };
+
+    const dom = makeMovieCard(movie);
+
+    assert.htmlEqual(dom, /*html*/`
+        <li class="movie" title="Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.">
+            <h2>Star Wars</h2>
+            <img src="./assets/movie-placeholder.png">
+            <span class="year">1977</span>
+        </li>
     `);
 });
