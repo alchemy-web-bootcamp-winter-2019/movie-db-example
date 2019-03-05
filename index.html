@@ -15,29 +15,36 @@
         <h1>Movie Search</h1>
     </header>
 
-    <form id="search-form">
-        <input name="search-term">
-        <button>Search</button>
-    </form>
+    <main>    
+        <form id="search-form">
+            <input name="search-term">
+            <button>Search</button>
+        </form>
 
-    <section id="paging-section" class="hidden">
-        <button id="previous-button">&lt; Previous</button>
-        
-        <div>
-            Page 
-            <span id="current-page">1</span>
-            of
-            <span id="total-pages"></span>
-        </div>
+        <section id="paging-section" class="hidden">
+            <button id="previous-button">&lt; Previous</button>
+            
+            <div>
+                Page 
+                <span id="current-page">1</span>
+                of
+                <span id="total-pages"></span>
+            </div>
 
-        <button id="next-button">Next &gt;</button>
-    </section>
+            <button id="next-button">Next &gt;</button>
+        </section>
 
-    <ul id="movie-list">
-        <p class="search-prompt">
-            Search for a movie above to get started!
-        </p>
-    </ul>
+        <ul id="movie-list">
+            <p class="search-prompt">
+                Search for a movie above to get started!
+            </p>
+        </ul>
+    </main>
+
+    <footer>
+        <img src="https://www.themoviedb.org/assets/2/v4/logos/primary-green-d70eebe18a5eb5b166d5c1ef0796715b8d1a2cbc698f96d311d62f894ae87085.svg">
+        This product uses the TMDb API but is not endorsed or certified by TMDb.
+    </footer>
 
     <script type="module" src="src/index.js"></script>
 </body>
