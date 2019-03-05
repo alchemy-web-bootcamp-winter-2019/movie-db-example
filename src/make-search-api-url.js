@@ -9,12 +9,11 @@ url.searchParams.set('include_adult', false);
 export default function makeSearchAPIUrl(queryOptions) {
     const searchOptions = queryOptions.search;
     const searchTerm = searchOptions.term;
-    if(!searchTerm) return '';
-
-    url.searchParams.set('query', searchOptions.term);
+    url.searchParams.set('query', searchTerm);
+    
     const pagingOptions = queryOptions.paging;
     const page = pagingOptions ? pagingOptions.page : 1;
     url.searchParams.set('page', page);
 
-    return url.toString();
+    return searchTerm ? url.toString() : '';
 }
