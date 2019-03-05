@@ -1,11 +1,9 @@
-import loadSearch from './search-component.js';
+import loadSearch, { updateSearchTerm } from './search-component.js';
 import loadMovies from './movies-component.js';
 import makeSearchAPIUrl from './make-search-api-url.js';
 import { writeOptionsAsQuery, readQueryAsOptions } from './query-options.js';
 
 let searchOptions = null;
-
-
 
 loadSearch(newSearchOptions => {
     searchOptions = newSearchOptions;
@@ -16,15 +14,27 @@ loadSearch(newSearchOptions => {
     window.location.hash = query;
 });
 
+runSearchFromQuery();
+
 window.addEventListener('hashchange', () => {
+    runSearchFromQuery();
+});
+
+function runSearchFromQuery() {
     const query = window.location.hash.slice(1);
     const queryOptions = readQueryAsOptions(query);
-
     const url = makeSearchAPIUrl(queryOptions);
+    
+    updateSearchTerm(queryOptions.search);
+    
+    if(!url) {
+        return;
+    }
     
     fetch(url)
         .then(response => response.json())
         .then(response => {
             loadMovies(response.results);
         });
-});
+}
+

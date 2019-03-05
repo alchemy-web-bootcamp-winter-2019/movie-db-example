@@ -12,3 +12,14 @@ test('includes encoded search term', assert => {
     
     assert.equal(url, 'https://api.themoviedb.org/3/search/movie?api_key=a9c1c53b2d714000fd04fb94fe4ad651&language=en-US&query=star%20wars&page=1&include_adult=false');
 });
+
+test('return null if no search', assert => {
+    const queryOptions = {
+        search: { term: '' }
+    };
+
+    const url = makeSearchAPIUrl(queryOptions);
+    
+    assert.equal(url, '');
+
+});
