@@ -16,7 +16,6 @@ export function updatePagingInfo(pagingInfo) {
 }
 
 export default function loadPaging(callback) {
-
     nextButton.addEventListener('click', () => {
         callback({
             page: currentPageNumber + 1
@@ -28,5 +27,4 @@ export default function loadPaging(callback) {
             page: currentPageNumber - 1
         });
     });
-
 }
