@@ -20,6 +20,7 @@ function updateQuery() {
     const newQuery = writePageToQuery(existingQuery, currentPageNumber);
     window.location.hash = newQuery;
 }
+
 nextButton.addEventListener('click', () => {
     currentPageNumber++;
     updateQuery();
