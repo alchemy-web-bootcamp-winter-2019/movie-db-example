@@ -11,16 +11,16 @@ window.addEventListener('hashchange', () => {
 
     const url = makeSearchMovieUrl(queryOptions);
 
-    // TODO: guard against empty search
-    // if(!url) {
-    //     return;
-    // }
+    if(!url) {
+        return;
+        // TODO: reset movies and paging to hidden
+    }
 
     fetch(url)
         .then(response => response.json())
         .then(body => {
             loadMovies(body.results);
-            
+
             const pagingInfo = {
                 page: body.page,
                 totalPages: body.total_pages,
