@@ -20,8 +20,11 @@ window.addEventListener('hashchange', () => {
         .then(response => response.json())
         .then(body => {
             loadMovies(body.results);
+            
             const pagingInfo = {
-                
-            }
+                page: body.page,
+                totalPages: body.total_pages,
+            };
+            updatePagingInfo(pagingInfo);
         });
 });
