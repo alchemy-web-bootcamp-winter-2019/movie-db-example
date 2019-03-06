@@ -21,24 +21,32 @@
             <button>Search</button>
         </form>
 
-        <section id="paging-section">
-            <button id="previous-button">&lt; Previous</button>
-            
-            <div>
-                Page 
-                <span id="current-page">1</span>
-                of
-                <span id="total-pages"></span>
-            </div>
+        <p id="prompt">
+            Search for a movie to get started.
+        </p>
 
-            <button id="next-button">Next &gt;</button>
-        </section>
+        <div id="movies-container" class="hidden">
+            <section id="paging-section">
+                <button id="previous-button">&lt; Previous</button>
+                
+                <div>
+                    Page 
+                    <span id="current-page">1</span>
+                    of
+                    <span id="total-pages"></span>
+                </div>
 
-        <ul id="movie-list">
-            <p class="search-prompt">
-                Search for a movie above to get started!
-            </p>
-        </ul>
+                <button id="next-button">Next &gt;</button>
+            </section>
+
+            <ul id="movie-list">
+                <p class="search-prompt">
+                    Search for a movie above to get started!
+                </p>
+            </ul>
+
+        </div>
+
     </main>
 
     <footer>
