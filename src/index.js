@@ -3,10 +3,15 @@ import loadMovieDetail from './movie-detail-component.js';
 import { updateSearchTerm } from './search-component.js';
 import { updatePagingInfo } from './paging-component.js';
 import { readFromQuery } from './hash-query.js';
-import { makeSearchMovieUrl } from './movie-api.js';
+import { makeSearchMovieUrl, makeMovieDetailUrl } from './movie-api.js';
 
-loadMovies(movie => {
-    loadMovieDetail(movie);
+loadMovies(movieId => {
+    const url = makeMovieDetailUrl(movieId);
+    fetch(url)
+        .then(response => response.json())
+        .then(movieDetail => {
+            loadMovieDetail(movieDetail);
+        });
 });
 
 const prompt = document.getElementById('prompt');

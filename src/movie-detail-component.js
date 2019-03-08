@@ -3,6 +3,7 @@ export function makeMovieDetail(movie) {
         <article>
             <img src="https://image.tmdb.org/t/p/w300${movie.backdrop_path}">
             <h2>${movie.title}</h2>
+            <p>${movie.tagline}</p>
             <p class="description">${movie.overview}</p>
         </article>
     `;

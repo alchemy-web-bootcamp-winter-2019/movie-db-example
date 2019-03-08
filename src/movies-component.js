@@ -45,7 +45,7 @@ export function updateMovies(movies) {
             li.classList.add('selected');
             selectedItem = li;
             
-            selectCallback(movie);
+            selectCallback(movie.id);
         });
 
         movieList.appendChild(dom);
