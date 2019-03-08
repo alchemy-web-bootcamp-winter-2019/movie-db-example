@@ -3,7 +3,7 @@ import loadMovieDetail from './movie-detail-component.js';
 import { updateSearchTerm } from './search-component.js';
 import { updatePagingInfo } from './paging-component.js';
 import { readFromQuery } from './hash-query.js';
-import makeSearchMovieUrl from './make-search-movie-url.js';
+import { makeSearchMovieUrl } from './movie-api.js';
 
 loadMovies(movie => {
     loadMovieDetail(movie);

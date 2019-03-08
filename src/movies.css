@@ -48,3 +48,17 @@
 .description {
     font-size: .9em;
 }
+
+#detail-container img {
+    height: 169px;
+}
+
+#detail-container h2 {
+    margin-top: -169px;
+    height: 169px;
+    font-size: 1.2em;
+    overflow-y: hidden;
+    color: white;
+    padding: 5px;
+    text-shadow: 1px 1px black;
+}
