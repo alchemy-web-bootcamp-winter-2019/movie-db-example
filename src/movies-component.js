@@ -29,6 +29,8 @@ export default function loadMovies(callback) {
     selectCallback = callback;
 }
 
+let selectedItem = null;
+
 export function updateMovies(movies) {
     clearMovies();
 
@@ -37,6 +39,12 @@ export function updateMovies(movies) {
         
         const li = dom.querySelector('li');
         li.addEventListener('click', () => {
+            if(selectedItem) {
+                selectedItem.classList.remove('selected');
+            }
+            li.classList.add('selected');
+            selectedItem = li;
+            
             selectCallback(movie);
         });
 

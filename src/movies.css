@@ -18,6 +18,11 @@
     background: #eee;
     margin-right: 5px;
     margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.movie.selected {
+    background: lightsteelblue;
 }
 
 .movie h2 {
