@@ -11,3 +11,17 @@ export function makeMovieDetail(movie) {
     template.innerHTML = html;
     return template.content;
 }
+
+const detailContainer = document.getElementById('detail-container');
+
+export default function loadMovieDetail(movie) {
+    clearDetail();
+    const dom = makeMovieDetail(movie);
+    detailContainer.appendChild(dom);
+}
+
+function clearDetail() {
+    while(detailContainer.children.length > 0) {
+        detailContainer.lastElementChild.remove();
+    }
+}
