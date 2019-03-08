@@ -1,8 +1,12 @@
-import loadMovies from './movies-component.js';
+import loadMovies, { updateMovies } from './movies-component.js';
 import { updateSearchTerm } from './search-component.js';
 import { updatePagingInfo } from './paging-component.js';
 import { readFromQuery } from './hash-query.js';
 import makeSearchMovieUrl from './make-search-movie-url.js';
+
+loadMovies(movie => {
+    console.log('would show detail for:', movie);
+});
 
 const prompt = document.getElementById('prompt');
 const moviesContainer = document.getElementById('movie-list-container');
@@ -31,7 +35,7 @@ function loadQuery() {
     fetch(url)
         .then(response => response.json())
         .then(body => {
-            loadMovies(body.results);
+            updateMovies(body.results);
 
             const pagingInfo = {
                 page: body.page,

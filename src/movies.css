@@ -36,8 +36,8 @@
 }
 
 #list-detail-container {
-    /* display: grid;
-    grid-template-columns: 1fr 300px; */
+    display: grid;
+    grid-template-columns: 1fr 300px;
 }
 
 .description {

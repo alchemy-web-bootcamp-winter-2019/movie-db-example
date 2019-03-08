@@ -23,11 +23,23 @@ export function makeMovieCard(movie) {
 
 const movieList = document.getElementById('movie-list');
 
-export default function loadMovies(movies) {
+let selectCallback = null;
+
+export default function loadMovies(callback) {
+    selectCallback = callback;
+}
+
+export function updateMovies(movies) {
     clearMovies();
 
     movies.forEach(movie => {
         const dom = makeMovieCard(movie);
+        
+        const li = dom.querySelector('li');
+        li.addEventListener('click', () => {
+            selectCallback(movie);
+        });
+
         movieList.appendChild(dom);
     });
 }
