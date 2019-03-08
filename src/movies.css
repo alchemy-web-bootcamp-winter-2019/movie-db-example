@@ -34,3 +34,12 @@
     padding-top: 5px;
     font-size: .75em;
 }
+
+#list-detail-container {
+    /* display: grid;
+    grid-template-columns: 1fr 300px; */
+}
+
+.description {
+    font-size: .9em;
+}

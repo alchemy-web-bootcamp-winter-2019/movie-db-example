@@ -5,7 +5,7 @@ import { readFromQuery } from './hash-query.js';
 import makeSearchMovieUrl from './make-search-movie-url.js';
 
 const prompt = document.getElementById('prompt');
-const moviesContainer = document.getElementById('movies-container');
+const moviesContainer = document.getElementById('movie-list-container');
 
 window.addEventListener('hashchange', loadQuery);
 
