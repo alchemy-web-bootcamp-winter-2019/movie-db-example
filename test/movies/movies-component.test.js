@@ -1,4 +1,4 @@
-import { makeMovieCard } from '../src/movies-component.js';
+import { makeMovieCard } from '../../src/movies/movies-component.js';
 const test = QUnit.test;
 
 QUnit.module('movies component');

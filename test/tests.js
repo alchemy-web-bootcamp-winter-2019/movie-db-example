@@ -1,5 +1,6 @@
 import './html-equal.js';
-import './movies-component.test.js';
+import './header-component.test.js';
 import './hash-query.test.js';
-import './movie-api.test.js';
-import './movie-detail-component.test.js';
+import './movies/movie-api.test.js';
+import './movies/movies-component.test.js';
+import './movies/movie-detail-component.test.js';

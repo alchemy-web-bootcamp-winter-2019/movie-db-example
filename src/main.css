@@ -6,19 +6,6 @@ body {
     box-sizing: border-box;
 }
 
-header {
-    display: flex;
-    align-items: center;
-}
-
-h1 {
-    margin-left: 20px;
-}
-
-main {
-    margin-bottom: 50px;
-}
-
 footer {
     position: fixed;
     height: 50px;

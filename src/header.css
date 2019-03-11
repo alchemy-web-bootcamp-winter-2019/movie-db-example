@@ -1,0 +1,28 @@
+body {
+    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header, .profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1.header-title {
+    margin-left: 20px;
+    flex-grow: 2
+}
+
+.profile button {
+    margin-left: 5px;
+}
+
+.profile img {
+    width: 32px;
+    border-radius: 100%;
+    margin-right: 5px;
+}

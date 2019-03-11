@@ -1,9 +1,12 @@
-import loadMovies, { updateMovies } from './movies-component.js';
-import loadMovieDetail from './movie-detail-component.js';
-import { updateSearchTerm } from './search-component.js';
-import { updatePagingInfo } from './paging-component.js';
-import { readFromQuery } from './hash-query.js';
-import { makeSearchMovieUrl, makeMovieDetailUrl } from './movie-api.js';
+import loadHeader from './header-component.js';
+import loadMovies, { updateMovies } from './movies/movies-component.js';
+import loadMovieDetail from './movies/movie-detail-component.js';
+import { updateSearchTerm } from './movies/search-component.js';
+import { updatePagingInfo } from './movies/paging-component.js';
+import { readFromQuery } from './movies/hash-query.js';
+import { makeSearchMovieUrl, makeMovieDetailUrl } from './movies/movie-api.js';
+
+loadHeader();
 
 loadMovies(movieId => {
     const url = makeMovieDetailUrl(movieId);
