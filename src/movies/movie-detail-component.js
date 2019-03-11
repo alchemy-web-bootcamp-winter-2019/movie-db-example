@@ -5,6 +5,7 @@ export function makeMovieDetail(movie) {
             <h2>${movie.title}</h2>
             <p>${movie.tagline}</p>
             <p class="description">${movie.overview}</p>
+            <button class="favorite">Add To Favorites</button>
         </article>
     `;
 
@@ -15,9 +16,13 @@ export function makeMovieDetail(movie) {
 
 const detailContainer = document.getElementById('detail-container');
 
-export default function loadMovieDetail(movie) {
+export default function loadMovieDetail(movie, favoriteCallback) {
     clearDetail();
     const dom = makeMovieDetail(movie);
+    const favoriteButton = dom.querySelector('button.favorite');
+    favoriteButton.addEventListener('click', () => {
+        favoriteCallback(movie.id);
+    });
     detailContainer.appendChild(dom);
 }
 

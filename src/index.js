@@ -13,9 +13,13 @@ loadMovies(movieId => {
     fetch(url)
         .then(response => response.json())
         .then(movieDetail => {
-            loadMovieDetail(movieDetail);
+            loadMovieDetail(movieDetail, favoritizeMovie);
         });
 });
+
+function favoritizeMovie(movieId) {
+    console.log(movieId);
+}
 
 const prompt = document.getElementById('prompt');
 const moviesContainer = document.getElementById('movie-list-container');
