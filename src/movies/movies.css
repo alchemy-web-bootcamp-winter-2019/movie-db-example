@@ -19,13 +19,17 @@
     /* cursor: pointer; */
 }
 
-.movie .favorite {
+.movie .favorite-star {
     position: absolute;
     cursor: pointer;
     top: 0;
     right: 2px;
     color: #aaa;
     user-select: none;
+}
+
+.favorite-star.favorite {
+    color: gold;
 }
 
 .movie a {

@@ -11,7 +11,7 @@ export function makeMovieCard(movie) {
 
     const html = /*html*/`        
         <li class="movie" title="${movie.overview}">
-            <span class="favorite">☆</span>
+            <span class="favorite-star">☆</span>
             <a href="./movie-detail.html?id=${movie.id}">
                 <h2>${movie.title}</h2>
                 <img src="${poster}">
@@ -32,23 +32,54 @@ export function updateMovies(movies) {
 
     movies.forEach(movie => {
         const dom = makeMovieCard(movie);
-        const favoriteStar = dom.querySelector('.favorite');
+        const favoriteStar = dom.querySelector('.favorite-star');
 
-        console.log('current user', auth.currentUser);
         const userId = auth.currentUser.uid;
         const userFavoritesRef = favoritesByUserRef.child(userId);
         const userFavoriteMovieRef = userFavoritesRef.child(movie.id);
+        userFavoriteMovieRef.once('value')
+            .then(snapshot => {
+                const value = snapshot.val();
+                let isFavorite = false;
+                if(value) {
+                    addFavorite();
+                }
+                else {
+                    removeFavorite();
+                }
 
-        favoriteStar.addEventListener('click', () => {
-            userFavoriteMovieRef.set({
-                id: movie.id,
-                title: movie.title,
-                poster_path: movie.poster_path,
-                overview: movie.overview,
-                release_date: movie.release_date
+                function addFavorite() {
+                    isFavorite = true;
+                    favoriteStar.textContent = '★';
+                    favoriteStar.classList.add('favorite');
+                }
+
+                function removeFavorite() {
+                    isFavorite = false;
+                    favoriteStar.textContent = '☆';
+                    favoriteStar.classList.remove('favorite');
+                }
+
+                favoriteStar.addEventListener('click', () => {
+                    if(isFavorite) {
+                        userFavoriteMovieRef.remove();
+                        removeFavorite();
+                    }
+                    else {
+                        userFavoriteMovieRef.set({
+                            id: movie.id,
+                            title: movie.title,
+                            poster_path: movie.poster_path,
+                            overview: movie.overview,
+                            release_date: movie.release_date
+                        });
+                        addFavorite();
+                    }
+        
+                });
             });
 
-        });
+
 
         movieList.appendChild(dom);
     });
