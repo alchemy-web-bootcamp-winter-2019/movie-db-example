@@ -1,5 +1,5 @@
 import loadHeader from '../shared/header-component.js';
-import { auth } from '../firebase.js';
+import { auth, usersRef } from '../firebase.js';
 
 // don't load up profile and do auth check on this auth.html page
 const options = { skipAuth: true };
@@ -19,5 +19,17 @@ ui.start('#firebaseui-auth-container', {
     // where do we go on success?
     signInSuccessUrl: './' + window.location.hash,
     // don't show google account chooser
-    credentialHelper: firebaseui.auth.CredentialHelper.NONE
+    credentialHelper: firebaseui.auth.CredentialHelper.NONE,
+    callbacks: {
+        signInSuccessWithAuthResult(authResult) {
+            const user = authResult.user;
+            usersRef.child(user.uid)
+                .set({
+                    uid: user.uid,
+                    displayName: user.displayName,
+                    photoURL: user.photoURL
+                });
+            return true;
+        }
+    }
 });
