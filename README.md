@@ -17,11 +17,10 @@ Agenda:
         ```
     * Add info to `firebase.js`
     * Export refs
-1. Write user info on sign in
 1. Add movie as user favorite
+1. Don't load search until user is ready (.onAuthStateChanged)  
 1. Read movie as user favorites
 1. Remove movie as user favorite
-1. Event driven reads (on/off)
 
 ## Part 2
 
