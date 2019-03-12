@@ -4,26 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favorite Movies</title>
-
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     
     <link rel="stylesheet" href="src/main.css">
-    <link rel="stylesheet" href="src/auth/auth.css">
     <link rel="stylesheet" href="src/shared/header.css">
     <link rel="stylesheet" href="src/shared/footer.css">
+    <link rel="stylesheet" href="src/movie-detail/movie-detail.css">
 </head>
 <body>
     <div id="header-container"></div>
 
-    <main>
-        <p>Start tracking your favorite movies!</p>
-        <div id="firebaseui-auth-container"></div>
-    </main>
-    
-    <script type="module" src="src/auth/auth.js"></script>
+    <main></main>
+
+    <div id="footer-container"></div>
+
+    <script type="module" src="src/movie-detail/movie-detail.js"></script>
 </body>
 </html>

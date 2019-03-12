@@ -18,7 +18,16 @@
     background: #eee;
     margin-right: 5px;
     margin-bottom: 5px;
-    cursor: pointer;
+    /* cursor: pointer; */
+}
+
+.movie a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    text-decoration: none;
+    color: black;
 }
 
 .movie.selected {
@@ -38,27 +47,4 @@
 .movie .year {
     padding-top: 5px;
     font-size: .75em;
-}
-
-#list-detail-container {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-}
-
-.description {
-    font-size: .9em;
-}
-
-#detail-container img {
-    height: 169px;
-}
-
-#detail-container h2 {
-    margin-top: -169px;
-    height: 169px;
-    font-size: 1.2em;
-    overflow-y: hidden;
-    color: white;
-    padding: 5px;
-    text-shadow: 1px 1px black;
 }

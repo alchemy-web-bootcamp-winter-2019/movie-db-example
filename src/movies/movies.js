@@ -1,25 +1,13 @@
-import loadHeader from './header-component.js';
-import loadMovies, { updateMovies } from './movies/movies-component.js';
-import loadMovieDetail from './movies/movie-detail-component.js';
-import { updateSearchTerm } from './movies/search-component.js';
-import { updatePagingInfo } from './movies/paging-component.js';
-import { readFromQuery } from './movies/hash-query.js';
-import { makeSearchMovieUrl, makeMovieDetailUrl } from './movies/movie-api.js';
+import loadHeader from '../shared/header-component.js';
+import loadFooter from '../shared/footer-component.js';
+import { updateMovies } from './movies-component.js';
+import { updateSearchTerm } from './search-component.js';
+import { updatePagingInfo } from './paging-component.js';
+import { readFromQuery } from './hash-query.js';
+import { makeSearchMovieUrl } from '../movie-api.js';
 
 loadHeader();
-
-loadMovies(movieId => {
-    const url = makeMovieDetailUrl(movieId);
-    fetch(url)
-        .then(response => response.json())
-        .then(movieDetail => {
-            loadMovieDetail(movieDetail, favoritizeMovie);
-        });
-});
-
-function favoritizeMovie(movieId) {
-    console.log(movieId);
-}
+loadFooter();
 
 const prompt = document.getElementById('prompt');
 const moviesContainer = document.getElementById('movie-list-container');

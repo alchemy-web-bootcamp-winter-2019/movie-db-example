@@ -9,7 +9,8 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
     
     <link rel="stylesheet" href="src/main.css">
-    <link rel="stylesheet" href="src/header.css">
+    <link rel="stylesheet" href="src/shared/header.css">
+    <link rel="stylesheet" href="src/shared/footer.css">
     <link rel="stylesheet" href="src/movies/movies.css">
     <link rel="stylesheet" href="src/movies/search.css">
     <link rel="stylesheet" href="src/movies/paging.css">
@@ -54,11 +55,8 @@
         
     </main>
 
-    <footer>
-        <img src="https://www.themoviedb.org/assets/2/v4/logos/primary-green-d70eebe18a5eb5b166d5c1ef0796715b8d1a2cbc698f96d311d62f894ae87085.svg">
-        This product uses the TMDb API but is not endorsed or certified by TMDb.
-    </footer>
+    <div id="footer-container"></div>
 
-    <script type="module" src="src/index.js"></script>
+    <script type="module" src="src/movies/movies.js"></script>
 </body>
 </html>

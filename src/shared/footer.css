@@ -1,0 +1,19 @@
+footer {
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    font-size: 0.8em;
+    font-style: italic;
+    border-top: 1px solid #aaa;
+}
+
+footer img {
+    height: 70%;
+    margin: 0 10px;
+}

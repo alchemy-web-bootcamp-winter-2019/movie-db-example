@@ -1,4 +1,4 @@
-import loadHeader from '../header-component.js';
+import loadHeader from '../shared/header-component.js';
 import { auth } from '../firebase.js';
 
 // don't load up profile and do auth check on this auth.html page

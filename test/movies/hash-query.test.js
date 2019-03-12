@@ -1,4 +1,4 @@
-import { writeSearchToQuery, writePageToQuery, readFromQuery } from '../src/movies/hash-query.js';
+import { writeSearchToQuery, writePageToQuery, readFromQuery } from '../../src/movies/hash-query.js';
 const test = QUnit.test;
 
 QUnit.module('hash query');

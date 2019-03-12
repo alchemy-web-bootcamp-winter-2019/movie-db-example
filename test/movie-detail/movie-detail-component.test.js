@@ -1,4 +1,4 @@
-import { makeMovieDetail } from '../../src/movies/movie-detail-component.js';
+import { makeMovieDetail } from '../../src/movie-detail/movie-detail-component.js';
 const test = QUnit.test;
 
 QUnit.module('movie detail component');
@@ -80,7 +80,7 @@ test('makes movie detail', assert => {
     //assert
     assert.htmlEqual(dom, /*html*/`
         <article>
-            <img src="https://image.tmdb.org/t/p/w300/4iJfYYoQzZcONB9hNzg0J0wWyPH.jpg">
+            <img src="https://image.tmdb.org/t/p/w780/4iJfYYoQzZcONB9hNzg0J0wWyPH.jpg">
             <h2>Star Wars</h2>
             <p>A long time ago in a galaxy far, far away...</p>
             <p class="description">Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.</p>

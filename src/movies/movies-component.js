@@ -10,9 +10,11 @@ export function makeMovieCard(movie) {
 
     const html = /*html*/`        
         <li class="movie" title="${movie.overview}">
-            <h2>${movie.title}</h2>
-            <img src="${poster}">
-            <span class="year">${release}</span>
+            <a href="./movie-detail.html?id=${movie.id}">
+                <h2>${movie.title}</h2>
+                <img src="${poster}">
+                <span class="year">${release}</span>
+            </a>
         </li>
     `;
 
@@ -23,31 +25,11 @@ export function makeMovieCard(movie) {
 
 const movieList = document.getElementById('movie-list');
 
-let selectCallback = null;
-
-export default function loadMovies(callback) {
-    selectCallback = callback;
-}
-
-let selectedItem = null;
-
 export function updateMovies(movies) {
     clearMovies();
 
     movies.forEach(movie => {
         const dom = makeMovieCard(movie);
-        
-        const li = dom.querySelector('li');
-        li.addEventListener('click', () => {
-            if(selectedItem) {
-                selectedItem.classList.remove('selected');
-            }
-            li.classList.add('selected');
-            selectedItem = li;
-            
-            selectCallback(movie.id);
-        });
-
         movieList.appendChild(dom);
     });
 }
