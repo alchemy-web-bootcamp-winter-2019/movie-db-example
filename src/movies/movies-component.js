@@ -1,3 +1,4 @@
+import { auth, favoritesByUserRef } from '../firebase.js';
 const PLACE_HOLDER = './assets/movie-placeholder.png';
 const SPACE_HOLDER = '&nbsp;';
 
@@ -10,6 +11,7 @@ export function makeMovieCard(movie) {
 
     const html = /*html*/`        
         <li class="movie" title="${movie.overview}">
+            <span class="favorite">☆</span>
             <a href="./movie-detail.html?id=${movie.id}">
                 <h2>${movie.title}</h2>
                 <img src="${poster}">
@@ -30,6 +32,20 @@ export function updateMovies(movies) {
 
     movies.forEach(movie => {
         const dom = makeMovieCard(movie);
+        const favoriteStar = dom.querySelector('.favorite');
+        favoriteStar.addEventListener('click', () => {
+            const userId = auth.currentUser.uid;
+            const userFavoritesRef = favoritesByUserRef.child(userId);
+            const userFavoriteMovieRef = userFavoritesRef.child(movie.id);
+            userFavoriteMovieRef.set({
+                id: movie.id,
+                title: movie.title,
+                poster_path: movie.poster_path,
+                overview: movie.overview,
+                release_date: movie.release_date
+            });
+
+        });
         movieList.appendChild(dom);
     });
 }

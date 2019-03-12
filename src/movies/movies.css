@@ -7,18 +7,25 @@
 
 .movie {
     list-style: none;
+    position: relative;
     width: 150px;
-    height: 250px;
+    height: 275px;
     border: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     padding: 0 10px 5px 10px;
     background: #eee;
     margin-right: 5px;
     margin-bottom: 5px;
     /* cursor: pointer; */
+}
+
+.movie .favorite {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 2px;
+    color: #aaa;
+    user-select: none;
 }
 
 .movie a {
@@ -38,6 +45,7 @@
     font-size: .9em;
     height: 75px;
     display: flex;
+    margin-top: 20px;
     text-align: center;
     justify-content: center;
     align-items: center;
