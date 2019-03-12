@@ -5,6 +5,7 @@ import { updateSearchTerm } from './search-component.js';
 import { updatePagingInfo } from './paging-component.js';
 import { readFromQuery } from './hash-query.js';
 import { makeSearchMovieUrl } from '../movie-api.js';
+import { auth } from '../firebase.js';
 
 loadHeader();
 loadFooter();
@@ -14,7 +15,9 @@ const moviesContainer = document.getElementById('movie-list-container');
 
 window.addEventListener('hashchange', loadQuery);
 
-loadQuery();
+auth.onAuthStateChanged(() => {
+    loadQuery();
+});
 
 function loadQuery() {
     const query = window.location.hash.slice(1); //remove #
