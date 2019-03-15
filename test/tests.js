@@ -8,6 +8,7 @@ import './movies/movies-component.test.js';
 import './movie-detail/movie-detail-component.test.js';
 import './convert-object-to-array.test.js';
 
+// this is for passing travis
 QUnit.done(() => {
     app.delete();
 });
