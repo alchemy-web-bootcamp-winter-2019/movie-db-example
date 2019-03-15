@@ -1,8 +1,8 @@
 const config = {
     apiKey: 'AIzaSyC8RBblrwHfd4dt_hfpSCc6ujYj-T_LWe4',
     authDomain: 'user-demo-c6218.firebaseapp.com',
-    databaseURL: "https://user-demo-c6218.firebaseio.com",
-    projectId: "user-demo-c6218",
+    databaseURL: 'https://user-demo-c6218.firebaseio.com',
+    projectId: 'user-demo-c6218',
 };
 
 firebase.initializeApp(config);

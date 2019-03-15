@@ -13,8 +13,8 @@ auth.onAuthStateChanged(user => {
 
     userFavoritesRef.once('value')
         .then(snapshot => {
-        const data = snapshot.val();
-        const favoriteMovies = convertObjectToArray(data);
-        updateMovies(favoriteMovies);
-    });
+            const data = snapshot.val();
+            const favoriteMovies = convertObjectToArray(data);
+            updateMovies(favoriteMovies);
+        });
 });
