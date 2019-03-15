@@ -5,7 +5,7 @@ const config = {
     projectId: "user-demo-c6218",
 };
 
-firebase.initializeApp(config);
+export const app = firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 
